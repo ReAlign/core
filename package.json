@@ -1,0 +1,23 @@
+{
+  "name": "tiny-core",
+  "version": "0.0.0",
+  "description": "A tiny core of js.",
+  "main": "index.js",
+  "scripts": {
+    "ts-build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReAlign/core.git"
+  },
+  "author": "ReAlign <realign@yeah.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ReAlign/core/issues"
+  },
+  "homepage": "https://github.com/ReAlign/core#readme",
+  "devDependencies": {
+    "typescript": "^3.9.7"
+  }
+}
