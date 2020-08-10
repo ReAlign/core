@@ -1,8 +1,10 @@
-import * as net from './net/index';
-import * as utils from './utils/index';
-export { net, utils, };
+import * as MD5 from './md5/index';
+import * as Net from './net/index';
+import * as Utils from './utils/index';
+export { MD5, Net, Utils, };
 declare const _default: {
-    net: typeof net;
-    utils: typeof utils;
+    MD5: typeof MD5;
+    Net: typeof Net;
+    Utils: typeof Utils;
 };
 export default _default;

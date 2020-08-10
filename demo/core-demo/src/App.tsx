@@ -2,10 +2,27 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import Core from './../../../lib/net';
+// import { get } from './../../../lib/net/fetch';
+// import { md5 } from './../../../lib/md5/index';
+import deepTrim from './../../../lib/utils/deepTrim';
+import Core from './../../../lib';
 
 function App() {
-  console.log(Core);
+  const a = {
+    x: ' a ',
+    y: {
+      z: [1, ' 2  ', 3],
+    },
+    z: null,
+  };
+  const b = '  s ';
+  console.log(deepTrim(a), deepTrim(b));
+  // console.log(md5(JSON.stringify(document)));
+
+  // const url = 'https://mocks.alibaba-inc.com/mock/realign-mock/api/get';
+  // get(url).then((x) => {
+  //   console.log(x);
+  // });
   return (
     <div className="App">
       <header className="App-header">
