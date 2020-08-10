@@ -1,10 +1,15 @@
 module.exports = {
   roots: [
-    "<rootDir>/__test__"
+    '<rootDir>/__test__'
   ],
-  testRegex: '__test__/(.+)\\.test\\.(js?|ts?)$',
+  collectCoverage: true,
+  coverageDirectory: 'coverage',
+  testRegex: '__test__/(.+)\\.(test|spec|specs)\\.(ts)$',
   transform: {
-    "^.+\\.ts?$": "ts-jest"
+    '^.+\\.ts?$': 'ts-jest'
   },
   moduleFileExtensions: ['ts', 'js', 'json', 'node'],
+  collectCoverageFrom: [
+    'src/**/*.ts',
+  ]
 };

@@ -5,13 +5,8 @@
   "main": "index.js",
   "scripts": {
     "ts-build": "tsc",
-    "before-test": "npm run ts-build",
-    "test": "jest && codecov"
-  },
-  "jest": {
-    "coverageDirectory": "./coverage/",
-    "collectCoverage": true,
-    "testEnvironment": "node"
+    "test": "jest",
+    "test-cov": "jest && codecov"
   },
   "repository": {
     "type": "git",
