@@ -1,8 +1,10 @@
+import * as Clipboard from './clipboard/index';
 import * as MD5 from './md5/index';
 import * as Net from './net/index';
 import * as Utils from './utils/index';
-export { MD5, Net, Utils, };
+export { Clipboard, MD5, Net, Utils, };
 declare const _default: {
+    Clipboard: typeof Clipboard;
     MD5: typeof MD5;
     Net: typeof Net;
     Utils: typeof Utils;
