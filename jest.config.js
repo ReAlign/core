@@ -11,5 +11,10 @@ module.exports = {
   moduleFileExtensions: ['ts', 'js', 'json', 'node'],
   collectCoverageFrom: [
     'src/**/*.ts',
+  ],
+
+  automock: false,
+  setupFiles: [
+    './setupJest.js'
   ]
 };

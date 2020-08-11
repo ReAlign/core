@@ -7,8 +7,8 @@ export default function base(url: string = '', options: any = {}): Promise<Objec
       .then((json) => {
         resolve(json);
       })
-      .catch(() => {
-        reject();
+      .catch((e) => {
+        reject(e);
       });
   });
 };
