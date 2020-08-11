@@ -1,6 +1,7 @@
+import { IF_OBJ } from './../../../src-types/normal';
 import fetcher from './fetcher';
 
-export default function post(url = '', data = {}) {
+export default function post(url: string = '', data: IF_OBJ = {}): any {
   const options = {
     method: 'post',
     body: JSON.stringify(data),
@@ -9,4 +10,4 @@ export default function post(url = '', data = {}) {
     }
   };
   return fetcher(url, options);
-};
+}

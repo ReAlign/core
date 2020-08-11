@@ -67,20 +67,21 @@ const u = {
     return lWordArray;
   },
   wordToHex(lValue) {
-    let WordToHexValue = "";
-    let WordToHexValueTemp = "";
+    let WordToHexValue = '';
+    let WordToHexValueTemp = '';
     let lByte;
     let lCount;
     for (lCount = 0; lCount <= 3; lCount++) {
       lByte = (lValue >>> (lCount * 8)) & 255;
-      WordToHexValueTemp = "0" + lByte.toString(16);
+      WordToHexValueTemp = `0${lByte.toString(16)}`;
       WordToHexValue = WordToHexValue + WordToHexValueTemp.substr(WordToHexValueTemp.length - 2, 2);
     }
     return WordToHexValue;
   },
   uTF8Encode(string) {
-    string = string.replace(/\x0d\x0a/g, "\x0a");
-    let output = "";
+    // eslint-disable-next-line no-control-regex
+    string = string.replace(/\x0d\x0a/g, '\x0a');
+    let output = '';
     for (let n = 0; n < string.length; n++) {
       const c = string.charCodeAt(n);
       if (c < 128) {
@@ -97,7 +98,7 @@ const u = {
     return output;
   },
   md5(string: string = '') {
-    let x = Array();
+    let x = [];
     let k, AA, BB, CC, DD, a, b, c, d;
     const S11 = 7, S12 = 12, S13 = 17, S14 = 22;
     const S21 = 5, S22 = 9, S23 = 14, S24 = 20;

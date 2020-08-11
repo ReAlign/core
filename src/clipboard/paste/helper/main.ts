@@ -1,6 +1,6 @@
 import hijack from './hijack';
 
-export default function main(type: string = 'all', el: string = '', cbFn: Function = () => { }) {
+export default function main(type: string = 'all', el: string = '', cbFn: any): void|boolean {
   const _pasteEvt = (e) => {
     if (type === 'all') {
       e.preventDefault();
@@ -26,4 +26,4 @@ export default function main(type: string = 'all', el: string = '', cbFn: Functi
   }
 
   ele.addEventListener('paste', _pasteEvt, false);
-};
+}

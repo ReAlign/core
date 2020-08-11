@@ -2,9 +2,32 @@
   "name": "tiny-core",
   "version": "0.0.0",
   "description": "A tiny core of js.",
-  "main": "index.js",
+  "source": "src/index.ts",
+  "main": ".dist/tiny-core.js",
+  "browser": "dist/tiny-core.umd.js",
+  "umd:main": "dist/tiny-core.umd.js",
+  "jsnext:main": "dist/tiny-core.modern.js",
+  "module": "dist/tiny-core.module.js",
+  "syntax": {
+    "esmodules": "dist/tiny-core.modern.js"
+  },
+  "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "browser": "dist/tiny-core.module.js",
+      "umd": "dist/tiny-core.umd.js",
+      "import": "dist/tiny-core.module.js",
+      "require": "dist/tiny-core.js"
+    }
+  },
   "scripts": {
-    "ts-build": "tsc",
+    "rm:lib": "rimraf lib/ lib-types/",
+    "build:tsc": "npm run rm:lib && tsc",
+    "rm:dist": "rimraf dist/",
+    "build:microbundle": "microbundle --name TinyCore --output dist/ --raw",
+    "build:npm": "npm run rm:dist && npm run build:microbundle",
+    "lint": "eslint ./src/ --ext .ts",
     "test": "jest",
     "test-cov": "jest && codecov"
   },
@@ -19,16 +42,20 @@
   },
   "homepage": "https://github.com/ReAlign/core#readme",
   "devDependencies": {
-    "@babel/parser": "^7.11.3",
-    "@babel/types": "^7.11.0",
     "@types/jest": "^26.0.9",
+    "@typescript-eslint/eslint-plugin": "^3.9.0",
+    "@typescript-eslint/parser": "^3.9.0",
     "babel-core": "^6.26.3",
     "babel-jest": "^26.2.2",
     "babel-preset-env": "^1.7.0",
     "codecov": "^3.7.2",
+    "eslint": "^7.6.0",
     "jest": "^26.2.2",
-    "jest-fetch-mock": "^3.0.3",
+    "jest-diff": "^26.3.0",
+    "microbundle": "^0.12.3",
+    "pretty-format": "^26.3.0",
     "regenerator-runtime": "^0.13.7",
+    "rimraf": "^3.0.2",
     "ts-jest": "^26.1.4",
     "typescript": "^3.9.7"
   }

@@ -1,7 +1,7 @@
 import u from './u';
 
 const hijack = {
-  hijackPasteBase(e: any, type: String = '', cbFn: Function = () => { }) {
+  hijackPasteBase(e: any, type: string = '', cbFn: any): void|boolean {
     const cbd = e.clipboardData;
 
     if (!u.judgingPasteCompatibility(cbd)) {
@@ -9,7 +9,7 @@ const hijack = {
     }
 
     if (cbFn) {
-      let allInfo = [];
+      const allInfo = [];
       const list = [].slice.call(cbd.items) || [];
       const len = list.length;
 
@@ -25,11 +25,11 @@ const hijack = {
       u.getAllInfoFromPasteConent(opt, cbFn);
     }
   },
-  hijackPaste4All(e, cbFn) {
+  hijackPaste4All(e: any, cbFn: any) {
     hijack.hijackPasteBase(e, 'all', cbFn);
   },
 
-  hijackPaste4Text(e, cbFn) {
+  hijackPaste4Text(e: any, cbFn: any) {
     hijack.hijackPasteBase(e, 'text', cbFn);
   },
 

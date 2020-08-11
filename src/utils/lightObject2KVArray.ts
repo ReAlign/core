@@ -1,4 +1,6 @@
-export default function lightObject2KVArray(lo: Object = {}, encode: boolean = false): string[] {
+import { IF_OBJ } from './../../src-types/normal';
+
+export default function lightObject2KVArray(lo: IF_OBJ = {}, encode: boolean = false): string[] {
   const arr = [];
   const keys = Object.keys(lo);
 
@@ -13,4 +15,4 @@ export default function lightObject2KVArray(lo: Object = {}, encode: boolean = f
   }
 
   return arr;
-};
+}
