@@ -1,9 +1,9 @@
-import fetcher from './fetcher';
+import base from './base';
 import get from './get';
 import post from './post';
 
 export {
-  fetcher as fetch,
+  base,
   get,
   post,
 };

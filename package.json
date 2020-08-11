@@ -29,7 +29,8 @@
     "build:npm": "npm run rm:dist && npm run build:microbundle",
     "lint": "eslint ./src/ --ext .ts",
     "test": "jest",
-    "test-cov": "jest && codecov"
+    "test-cov": "jest && codecov",
+    "docs": "rimraf docs/ && typedoc"
   },
   "repository": {
     "type": "git",
@@ -57,6 +58,7 @@
     "regenerator-runtime": "^0.13.7",
     "rimraf": "^3.0.2",
     "ts-jest": "^26.1.4",
+    "typedoc": "^0.18.0",
     "typescript": "^3.9.7"
   }
 }

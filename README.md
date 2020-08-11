@@ -7,6 +7,7 @@
 [![NPM version][npm-image]][npm-url]
 [![download][downloads-image]][github-url]
 [![licence][licence-image]][github-url]
+[![docs][docs-image]][docs-url]
 
 [![NPM][nodei-image]][npm-url]
 
@@ -31,5 +32,7 @@
 [nodei-image]: https://nodei.co/npm/tiny-core.png?downloads=true&downloadRank=true&stars=tru
 
 [circleci-image]: https://circleci.com/gh/ReAlign/core.svg?style=shield
-
 [circleci-link]: https://app.circleci.com/pipelines/github/ReAlign/core
+
+[docs-image]: https://img.shields.io/badge/docs-complete-success.svg
+[docs-url]: https://realign.github.io/core
