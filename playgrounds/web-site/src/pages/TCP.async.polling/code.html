@@ -1,0 +1,31 @@
+<!-- html-macro-run-code -->
+<script>
+  run = async () => {
+    const helper = {
+      count: 0,
+      pFn() {
+        return new Promise((rs, rj) => {
+          setTimeout(() => {
+            helper.count++
+            logger('pFn')
+            rs(helper.count)
+          }, 300)
+        })
+      },
+      check({ res, resolve, reject }) {
+        return new Promise((rs) => {
+          const flag = res === 3
+          logger('xxx: ', flag, res)
+          if (flag) {
+            resolve(res)
+          }
+          rs(!flag)
+        })
+      },
+    }
+
+    const res = await TinyCore.async.polling(helper.pFn, helper.check, { delay: 800 })
+    logger('res: ', res)
+    logger('done.')
+  }
+</script>

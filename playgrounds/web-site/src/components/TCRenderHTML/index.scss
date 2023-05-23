@@ -1,0 +1,17 @@
+.tc-render-html-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: #fff;
+}
+.tc-render-html-preview-container {
+  width: 40%;
+  padding: 1em;
+  border-right: 1px solid #eee;
+}
+.tc-render-html-code-container {
+  flex: auto;
+  pre {
+    margin: 0;
+  }
+}

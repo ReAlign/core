@@ -1,0 +1,22 @@
+<div>
+  <textarea id="j-textarea" style="resize: none;" rows="6" cols="40" autofocus></textarea>
+  <br>
+  <img id="j-image" style="width: 100%;border: 1px solid #333;"
+    alt="It's going to be shown here when paste a picture.">
+</div>
+
+<script>
+  function cbPasteEvtImage(e, img) {
+    if (img) {
+      e.preventDefault()
+      console.log(e, img)
+      const fr = new FileReader()
+      fr.readAsDataURL(img.content)
+      fr.onloadend = function () {
+        document.getElementById('j-image').src = fr.result
+      }
+    }
+  }
+
+  TinyCore.clipboard.paste.image('#j-textarea', cbPasteEvtImage)
+</script>

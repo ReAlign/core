@@ -1,0 +1,60 @@
+<style>
+  .cls-controls-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .cls-logger-panel > pre.c_line {
+    margin: 0;
+    border-bottom: 1px solid #f1f1f1;
+  }
+  .cls-logger-panel > pre.c_line::before {
+    content: '> ';
+    color: #aaa;
+  }
+  .cls-logger-panel {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-top: 12px;
+    padding: 12px 16px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    color: #333;
+    font-size: 14px;
+    line-height: 28px;
+    overflow: auto;
+  }
+</style>
+<div>
+  <div class="cls-controls-container">
+    <button class="next-btn next-small next-btn-primary" id="j-btn-run">Run</button>
+    <button class="next-btn next-small next-btn-normal" id="j-btn-clear-logger">Clear logger</button>
+  </div>
+  <div class="cls-logger-panel" id="j-logger-panel"></div>
+</div>
+<script>
+  const btnRun = document.querySelector('#j-btn-run')
+  const btnClearLogger = document.querySelector('#j-btn-clear-logger')
+  const loggerPanel = document.querySelector('#j-logger-panel')
+  window.logger = (...xs) => {
+    const str = xs.reduce((prev, item) => {
+      const x = ['boolean', 'number', 'string'].includes(typeof(item)) ? item : JSON.stringify(item, null, 2)
+      prev += ` ${x}`
+      return prev
+    }, '')
+    if (loggerPanel) {
+      loggerPanel.innerHTML += `<pre class="c_line">${str}</pre>`
+    }
+  }
+
+  if (btnRun) {
+    btnRun.onclick = function () {
+      window.run()
+    }
+  }
+  if (btnClearLogger) {
+    btnClearLogger.onclick = function () {
+      loggerPanel.innerText = ''
+    }
+  }
+</script>

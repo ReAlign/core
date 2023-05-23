@@ -1,18 +1,21 @@
-import * as Clipboard from './clipboard/index';
-import * as MD5 from './md5/index';
-import * as Net from './net/index';
-import * as Utils from './utils/index';
+import * as async from './async/index';
+import * as clipboard from './clipboard/index';
+import * as md5 from './md5/index';
+import * as net from './net/index';
+import * as utils from './utils/index';
 
 export {
-  Clipboard,
-  MD5,
-  Net,
-  Utils,
+  async,
+  clipboard,
+  md5,
+  net,
+  utils,
 };
 
 export default {
-  Clipboard,
-  MD5,
-  Net,
-  Utils,
+  async,
+  clipboard,
+  md5,
+  net,
+  utils,
 };

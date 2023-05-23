@@ -1,0 +1,12 @@
+<!-- html-macro-run-code -->
+<script>
+  run = async () => {
+    logger('start')
+    logger('sleep 3000ms')
+    await TinyCore.async.sleep(3000)
+    logger('continue')
+    logger('sleep 4000ms')
+    await TinyCore.async.sleep(4000)
+    logger('end')
+  }
+</script>

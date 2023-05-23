@@ -1,0 +1,40 @@
+{
+  "vite": false,
+  "publicPath": "https://public-bucket-electron.nos-eastchina1.126.net/web_cdn/tiny-core/",
+  "webpackLoaders": {
+    "html": {
+      "test": ".html$",
+      "loaders": {
+        "html-loader": {}
+      }
+    }
+  },
+  "plugins": [
+    [
+      "build-plugin-fusion",
+      {
+        "externalNext": true
+      }
+    ],
+    [
+      "build-plugin-moment-locales",
+      {
+        "locales": [
+          "zh-cn"
+        ]
+      }
+    ],
+    [
+      "build-plugin-ignore-style",
+      {
+        "libraryName": "@alifd/next"
+      }
+    ]
+  ],
+  "externals": {
+    "react": "React",
+    "react-dom": "ReactDOM",
+    "@alifd/next": "Next",
+    "moment": "moment"
+  }
+}
